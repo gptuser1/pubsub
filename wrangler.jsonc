@@ -1,0 +1,30 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "pubsub",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+                "ClientDurableObject",
+				"TopicDurableObject"
+			],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+            {
+				"class_name": "ClientDurableObject",
+				"name": "CLIENT_DURABLE_OBJECT"
+			},
+			{
+				"class_name": "TopicDurableObject",
+				"name": "TOPIC_DURABLE_OBJECT"
+			}
+		]
+	},
+	"observability": {
+		"enabled": true
+	}
+}
